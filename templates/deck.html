@@ -1,0 +1,571 @@
+{% extends "base.html" %}
+{% block title %}{{ summary.name }} — ShabdKosh{% endblock %}
+
+{% block head %}
+<style>
+  .deck-header {
+    padding: 2rem 0 1.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+  }
+  .deck-header h1 { font-size: 2rem; }
+  .deck-header .lang-badge {
+    display: inline-block;
+    font-family: var(--font-script);
+    font-size: .9rem;
+    color: var(--accent);
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    padding: .15rem .6rem;
+    margin-bottom: .6rem;
+  }
+
+  .stats-row {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin: 1.25rem 0;
+  }
+  .stat-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: .75rem 1.25rem;
+    min-width: 100px;
+    text-align: center;
+  }
+  .stat-box .val { font-size: 1.6rem; font-weight: 600; line-height: 1; }
+  .stat-box .lbl { font-size: .72rem; color: var(--muted); margin-top: .2rem; }
+  .stat-box.due .val { color: var(--accent); }
+  .stat-box.mature .val { color: var(--green); }
+
+  .actions-bar {
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  /* card table */
+  .card-list { width: 100%; border-collapse: collapse; }
+  .card-list th {
+    text-align: left;
+    padding: .5rem .75rem;
+    color: var(--muted);
+    font-size: .75rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+  }
+  .card-list td {
+    padding: .65rem .75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    font-size: .875rem;
+  }
+  .card-list tr:last-child td { border-bottom: none; }
+  .card-list tr:hover td { background: var(--surface); }
+  .card-front { font-family: var(--font-script); font-size: 1.05rem; }
+  .card-transl { color: var(--muted); font-size: .78rem; margin-top: .1rem; }
+  .card-example { color: var(--muted); font-size: .78rem; font-style: italic; margin-top: .1rem; }
+  .interval-bar {
+    width: 60px; height: 5px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: .3rem;
+  }
+  .interval-bar-fill {
+    height: 100%;
+    background: var(--green);
+    border-radius: 3px;
+  }
+
+  .empty-cards {
+    text-align: center;
+    padding: 3rem;
+    color: var(--muted);
+  }
+
+  /* session intention modal */
+  .mode-option {
+    display: flex;
+    align-items: flex-start;
+    gap: .75rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: .85rem 1rem;
+    cursor: pointer;
+    transition: border-color .15s, background .15s;
+  }
+  .mode-option:has(input:checked) {
+    border-color: var(--accent);
+    background: var(--accent-dim);
+  }
+  .mode-option input[type="radio"] { margin-top: .2rem; accent-color: var(--accent); }
+  .mode-body { display: flex; flex-direction: column; gap: .2rem; }
+  .mode-title { font-size: .9rem; font-weight: 500; }
+  .mode-desc { font-size: .78rem; color: var(--muted); }
+
+  .cap-btn {
+    padding: .35rem .85rem;
+    border-radius: 99px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--muted);
+    font-size: .78rem;
+    cursor: pointer;
+    transition: border-color .12s, color .12s, background .12s;
+  }
+  .cap-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .cap-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+
+  /* add card panel */
+  .add-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  .add-panel h2 { margin-bottom: 1.25rem; font-size: 1.05rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+  @media (max-width: 540px) { .form-row { grid-template-columns: 1fr; } }
+
+  /* transliteration preview */
+  .translit-wrap { position: relative; }
+  .translit-preview {
+    display: none;
+    align-items: center;
+    gap: .5rem;
+    margin-top: .4rem;
+    padding: .45rem .75rem;
+    background: var(--accent-dim);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    font-family: var(--font-script);
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .translit-preview.visible { display: flex; }
+  .translit-preview .preview-text { flex: 1; }
+  .translit-use-btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: .2rem .65rem;
+    font-size: .78rem;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: var(--font-body);
+  }
+  .translit-use-btn:hover { opacity: .85; }
+  .translit-loading {
+    font-size: .75rem;
+    color: var(--muted);
+    margin-top: .3rem;
+    display: none;
+  }
+  .translit-loading.visible { display: block; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container wide">
+  <div class="deck-header">
+    <div class="lang-badge">{{ summary.language }}</div>
+    <h1>{{ summary.name }}</h1>
+    {% if summary.description %}<p class="muted mt-1">{{ summary.description }}</p>{% endif %}
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-box"><div class="val">{{ summary.total }}</div><div class="lbl">Total</div></div>
+    <div class="stat-box due"><div class="val">{{ summary.due }}</div><div class="lbl">Due Today</div></div>
+    <div class="stat-box"><div class="val">{{ summary.new }}</div><div class="lbl">New</div></div>
+    <div class="stat-box"><div class="val">{{ summary.learning }}</div><div class="lbl">Learning</div></div>
+    <div class="stat-box mature"><div class="val">{{ summary.mature }}</div><div class="lbl">Mature</div></div>
+  </div>
+
+  <div class="actions-bar">
+    {% if summary.due > 0 %}
+    <button class="btn btn-primary" onclick="openSessionModal()">▶ Start Review ({{ summary.due }} due)</button>
+    {% else %}
+    <button class="btn btn-ghost" onclick="openSessionModal()" style="opacity:.7;">🎴 Cram All Cards</button>
+    {% endif %}
+    <button class="btn btn-ghost" onclick="document.getElementById('addPanel').scrollIntoView({behavior:'smooth'})">+ Add Card</button>
+    <button class="btn btn-danger btn-sm" onclick="confirmDelete()">Delete Deck</button>
+  </div>
+
+  <!-- Session intention modal -->
+  <div class="modal-backdrop" id="sessionModal">
+    <div class="modal" style="max-width:400px;">
+      <h2>Start a session</h2>
+      <p class="muted mt-1" style="margin-bottom:1.25rem;">How would you like to study?</p>
+
+      <div style="display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.5rem;">
+        <label class="mode-option" id="modeLearn">
+          <input type="radio" name="mode" value="learn" checked>
+          <div class="mode-body">
+            <span class="mode-title">📚 Learn — Due cards only</span>
+            <span class="mode-desc">{{ summary.due }} card{{ 's' if summary.due != 1 }} due today, using spaced repetition</span>
+          </div>
+        </label>
+        <label class="mode-option" id="modeCram">
+          <input type="radio" name="mode" value="cram">
+          <div class="mode-body">
+            <span class="mode-title">⚡ Cram — All {{ summary.total }} cards</span>
+            <span class="mode-desc">Ignore intervals, great for exam prep</span>
+          </div>
+        </label>
+      </div>
+
+      <div style="margin-bottom:1.5rem;">
+        <p style="font-size:.8rem;color:var(--muted);font-weight:500;margin-bottom:.65rem;">How long do you have?</p>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;" id="capButtons">
+          <button class="cap-btn active" data-cap="0">Full session</button>
+          <button class="cap-btn" data-cap="10">~10 cards</button>
+          <button class="cap-btn" data-cap="20">~20 cards</button>
+          <button class="cap-btn" data-cap="5">~5 min</button>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-ghost" onclick="closeSessionModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="startSession()">Start ▶</button>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="margin-bottom:1rem;">Cards</h2>
+
+  {% if cards %}
+  <div style="overflow-x:auto;">
+    <table class="card-list" id="cardTable">
+      <thead>
+        <tr>
+          <th>Front</th>
+          <th>Back</th>
+          <th>Due</th>
+          <th>Reps</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for c in cards %}
+        <tr id="row-{{ c.card_id }}">
+          <td>
+            <div class="card-front">{{ c.front }}</div>
+            {% if c.transliteration %}<div class="card-transl roma">[{{ c.transliteration }}]</div>{% endif %}
+            {% if c.example %}<div class="card-example">{{ c.example }}</div>{% endif %}
+          </td>
+          <td>{{ c.back }}</td>
+          <td>
+            <span style="color:{% if c.is_due %}var(--accent){% else %}var(--muted){% endif %}; font-size:.8rem;">
+              {{ c.due_date }}
+            </span>
+            <div class="interval-bar">
+              <div class="interval-bar-fill" style="width:{{ [c.interval * 3, 100] | min }}%"></div>
+            </div>
+          </td>
+          <td style="color:var(--muted); font-size:.8rem;">{{ c.repetitions }}</td>
+          <td>
+            <button class="btn btn-ghost btn-sm" onclick="deleteCard('{{ c.card_id }}')">✕</button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <div class="empty-cards">No cards yet. Add some below!</div>
+  {% endif %}
+
+  <!-- Add Card Form -->
+  <div class="add-panel" id="addPanel">
+    <h2>Add a Card</h2>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Front — type in Roman letters, we'll convert to script</label>
+        <div class="translit-wrap">
+          <input type="text" id="cFront" placeholder="e.g. namaste or नमस्ते" autocomplete="off">
+          <div class="translit-loading" id="translitLoading">converting…</div>
+          <div class="translit-preview" id="translitPreview">
+            <span class="preview-text" id="translitText"></span>
+            <button class="translit-use-btn" onclick="useTranslit()">Use ✓</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Back — translation / meaning</label>
+        <input type="text" id="cBack" placeholder="e.g. Hello / Greetings">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Transliteration / pronunciation (optional)</label>
+        <input type="text" id="cTransl" placeholder="auto-filled from what you typed above">
+      </div>
+      <div class="form-group">
+        <label>Example sentence (optional)</label>
+        <input type="text" id="cExample" placeholder="e.g. नमस्ते! आप कैसे हैं?">
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="addCard()">Add Card</button>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const deckName = {{ summary.name | tojson }};
+
+  /* ── Session intention modal ── */
+  function openSessionModal() {
+    document.getElementById('sessionModal').classList.add('open');
+  }
+  function closeSessionModal() {
+    document.getElementById('sessionModal').classList.remove('open');
+  }
+  document.getElementById('sessionModal').addEventListener('click', function(e) {
+    if (e.target === this) closeSessionModal();
+  });
+
+  // cap buttons
+  let selectedCap = 0;
+  document.querySelectorAll('.cap-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.cap-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedCap = parseInt(btn.dataset.cap);
+    });
+  });
+
+  function startSession() {
+    const mode = document.querySelector('input[name="mode"]:checked').value;
+    const cram = mode === 'cram' ? '1' : '0';
+    location.href = `/review/${encodeURIComponent(deckName)}?cram=${cram}&cap=${selectedCap}`;
+  }
+
+  /* ── Offline Hindi Transliterator ── */
+  // Converts casual Roman (WhatsApp-style) → Devanagari, no network needed.
+  // Rules are applied longest-match-first so 'bh' beats 'b', 'aa' beats 'a', etc.
+
+  const TRANSLIT_MAP = [
+    // ── aspirated / compound consonants (must come before single letters) ──
+    ['kh',  'ख'], ['gh',  'घ'], ['chh', 'छ'], ['ch',  'च'],
+    ['jh',  'झ'], ['tth', 'ठ'], ['ddh', 'ढ'], ['Th',  'ठ'], ['Dh', 'ढ'],
+    ['th',  'थ'], ['dh',  'ध'], ['ph',  'फ'], ['bh',  'भ'],
+    ['sh',  'श'], ['Sh',  'ष'], ['ng',  'ङ'], ['ny',  'ञ'],
+    ['nk',  'ङ्क'], ['nt', 'न्त'], ['nd', 'न्द'],
+    // ── long vowels (digraphs before singles) ──
+    ['aa',  'ा'], ['ii',  'ी'], ['ee',  'ी'], ['uu',  'ू'], ['oo', 'ू'],
+    ['ai',  'ै'], ['au',  'ौ'], ['ou',  'ौ'], ['oi',  'ोई'],
+    ['ri',  'ृ'],
+    // ── single consonants ──
+    ['k',   'क'], ['g',  'ग'],  ['j',  'ज'],
+    ['t',   'त'], ['d',  'द'],  ['n',  'न'], ['p',  'प'], ['b',  'ब'],
+    ['m',   'म'], ['y',  'य'],  ['r',  'र'], ['l',  'ल'],
+    ['v',   'व'], ['w',  'व'],  ['s',  'स'], ['h',  'ह'],
+    ['f',   'फ़'], ['z', 'ज़'],  ['q',  'क़'], ['c',  'क'],
+    // ── single vowels ──
+    ['a',   'अ'], ['i',  'इ'],  ['u',  'उ'], ['e',  'ए'], ['o',  'ओ'],
+  ];
+
+  // Common full-word overrides for words that the rule engine handles awkwardly
+  const WORD_OVERRIDES = {
+    'namaste': 'नमस्ते', 'namasthe': 'नमस्ते',
+    'paani': 'पानी', 'pani': 'पानी',
+    'khana': 'खाना', 'khaana': 'खाना',
+    'ghar': 'घर',
+    'dost': 'दोस्त',
+    'pyaar': 'प्यार', 'pyar': 'प्यार',
+    'baccha': 'बच्चा', 'bacha': 'बच्चा',
+    'aaj': 'आज',
+    'kal': 'कल',
+    'theek': 'ठीक', 'thik': 'ठीक',
+    'accha': 'अच्छा', 'acha': 'अच्छा',
+    'haan': 'हाँ', 'han': 'हाँ',
+    'nahin': 'नहीं', 'nahi': 'नहीं', 'nai': 'नहीं',
+    'bahut': 'बहुत',
+    'shukriya': 'शुक्रिया',
+    'kaise': 'कैसे',
+    'chai': 'चाय',
+    'roti': 'रोटी',
+    'dilli': 'दिल्ली',
+    'bharat': 'भारत',
+    'hindi': 'हिन्दी',
+    'punjabi': 'पंजाबी',
+    'beta': 'बेटा',
+    'beti': 'बेटी',
+    'maa': 'माँ', 'ma': 'माँ',
+    'baap': 'बाप', 'papa': 'पापा',
+    'bhai': 'भाई',
+    'behen': 'बहन', 'bahen': 'बहन',
+    'dil': 'दिल',
+    'duniya': 'दुनिया',
+    'zindagi': 'ज़िन्दगी',
+    'mohabbat': 'मोहब्बत',
+    'ishq': 'इश्क़',
+    'yaar': 'यार',
+    'chal': 'चल',
+    'chalte': 'चलते',
+    'kya': 'क्या',
+    'hai': 'है',
+    'hain': 'हैं',
+    'hua': 'हुआ',
+    'main': 'मैं', 'mein': 'मैं',
+    'aap': 'आप',
+    'tum': 'तुम',
+    'hum': 'हम',
+    'woh': 'वो', 'vo': 'वो',
+    'yeh': 'यह', 'ye': 'यह',
+    'ek': 'एक',
+    'do': 'दो',
+    'teen': 'तीन',
+    'achha': 'अच्छा',
+  };
+
+  function transliterateHindi(input) {
+    const words = input.toLowerCase().trim().split(/\s+/);
+    return words.map(word => {
+      // 1. Check overrides first
+      if (WORD_OVERRIDES[word]) return WORD_OVERRIDES[word];
+
+      // 2. Rule-based: longest match first
+      let result = '';
+      let i = 0;
+      while (i < word.length) {
+        let matched = false;
+        for (const [roman, devanagari] of TRANSLIT_MAP) {
+          if (word.slice(i).startsWith(roman)) {
+            result += devanagari;
+            i += roman.length;
+            matched = true;
+            break;
+          }
+        }
+        if (!matched) {
+          result += word[i];
+          i++;
+        }
+      }
+      return result;
+    }).join(' ');
+  }
+
+  let translitDebounce = null;
+  let lastRomanTyped  = '';
+
+  function isAlreadyScript(text) {
+    return /[^\u0000-\u007F\u00C0-\u024F\s]/.test(text);
+  }
+
+  // Kept async for API compatibility even though it's now synchronous
+  async function fetchTranslit(roman) {
+    const result = transliterateHindi(roman);
+    return result !== roman ? result : null;
+  }
+
+  function hideTranslitPreview() {
+    document.getElementById('translitPreview').classList.remove('visible');
+    document.getElementById('translitLoading').classList.remove('visible');
+  }
+
+  function showTranslitResult(hindiText) {
+    document.getElementById('translitText').textContent = hindiText;
+    document.getElementById('translitPreview').classList.add('visible');
+    document.getElementById('translitLoading').classList.remove('visible');
+  }
+
+  function useTranslit() {
+    const hindi = document.getElementById('translitText').textContent;
+    if (!hindi) return;
+    // Put the roman the user typed into Transliteration field (auto-fill)
+    if (lastRomanTyped && !document.getElementById('cTransl').value) {
+      document.getElementById('cTransl').value = lastRomanTyped;
+    }
+    document.getElementById('cFront').value = hindi;
+    hideTranslitPreview();
+    document.getElementById('cBack').focus();
+  }
+
+  document.getElementById('cFront').addEventListener('input', function () {
+    const raw = this.value.trim();
+    clearTimeout(translitDebounce);
+    hideTranslitPreview();
+
+    if (!raw) return;
+
+    // If user already typed in Devanagari/etc., don't transliterate
+    if (isAlreadyScript(raw)) return;
+
+    lastRomanTyped = raw;
+
+    // Show loading spinner after short pause, then fetch
+    translitDebounce = setTimeout(async () => {
+      document.getElementById('translitLoading').classList.add('visible');
+      const result = await fetchTranslit(raw);
+      if (document.getElementById('cFront').value.trim() !== raw) return; // user kept typing
+      if (result && result !== raw) {
+        showTranslitResult(result);
+      } else {
+        hideTranslitPreview();
+      }
+    }, 350);
+  });
+
+  // Hide preview when front field loses focus (small delay so "Use" click registers)
+  document.getElementById('cFront').addEventListener('blur', () => {
+    setTimeout(hideTranslitPreview, 200);
+  });
+
+  async function addCard() {
+    const front = document.getElementById('cFront').value.trim();
+    const back  = document.getElementById('cBack').value.trim();
+    if (!front || !back) { showToast('Front and back are required.'); return; }
+    const body = {
+      front, back,
+      transliteration: document.getElementById('cTransl').value.trim(),
+      example: document.getElementById('cExample').value.trim(),
+    };
+    const res = await fetch(`/api/decks/${encodeURIComponent(deckName)}/cards`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(body)
+    });
+    if (res.ok) {
+      showToast('Card added!');
+      ['cFront','cBack','cTransl','cExample'].forEach(id => document.getElementById(id).value = '');
+      hideTranslitPreview();
+      lastRomanTyped = '';
+      setTimeout(() => location.reload(), 600);
+    } else {
+      const err = await res.json();
+      showToast('Error: ' + err.error);
+    }
+  }
+
+  async function deleteCard(cardId) {
+    if (!confirm('Remove this card?')) return;
+    const res = await fetch(`/api/decks/${encodeURIComponent(deckName)}/cards/${cardId}`, {method:'DELETE'});
+    if (res.ok) {
+      document.getElementById('row-' + cardId)?.remove();
+      showToast('Card removed.');
+    }
+  }
+
+  async function confirmDelete() {
+    if (!confirm(`Delete the deck "${deckName}"? This cannot be undone.`)) return;
+    const res = await fetch(`/api/decks/${encodeURIComponent(deckName)}`, {method:'DELETE'});
+    if (res.ok) { location.href = '/'; }
+  }
+
+  // Allow Enter key in add form
+  ['cFront','cBack','cTransl','cExample'].forEach(id => {
+    document.getElementById(id).addEventListener('keydown', e => {
+      if (e.key === 'Enter') addCard();
+    });
+  });
+</script>
+{% endblock %}

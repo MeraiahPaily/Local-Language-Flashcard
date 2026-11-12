@@ -1,0 +1,368 @@
+{
+  "name": "Punjabi Basics",
+  "language": "Punjabi",
+  "description": "Essential Punjabi vocabulary in Gurmukhi script — greetings, family, food, numbers, colours, emotions, time, and everyday phrases",
+  "created_at": "2026-01-01T00:00:00",
+  "cards": [
+    {
+      "front": "ਸਤ ਸ੍ਰੀ ਅਕਾਲ",
+      "back": "Hello / Good day (Sikh greeting, literally: God is the ultimate truth)",
+      "transliteration": "Sat Sri Akaal",
+      "example": "ਸਤ ਸ੍ਰੀ ਅਕਾਲ! ਤੁਸੀਂ ਕਿਵੇਂ ਹੋ? — Sat Sri Akaal! How are you?",
+      "card_id": "pa001",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਨਮਸਕਾਰ",
+      "back": "Respectful greeting / Hello (used by Hindus and in formal settings)",
+      "transliteration": "Namaskaar",
+      "example": "ਨਮਸਕਾਰ ਜੀ! — Respectful hello!",
+      "card_id": "pa002",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਧੰਨਵਾਦ",
+      "back": "Thank you",
+      "transliteration": "Dhanvaad",
+      "example": "ਤੁਹਾਡੀ ਮਦਦ ਲਈ ਧੰਨਵਾਦ। — Thank you for your help.",
+      "card_id": "pa003",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਹਾਂ / ਨਹੀਂ",
+      "back": "Yes / No",
+      "transliteration": "Haan / Nahin",
+      "example": "ਕੀ ਤੁਸੀਂ ਪੰਜਾਬੀ ਬੋਲਦੇ ਹੋ? ਹਾਂ! — Do you speak Punjabi? Yes!",
+      "card_id": "pa004",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਮਾਫ਼ ਕਰਨਾ",
+      "back": "Sorry / Please forgive me",
+      "transliteration": "Maaf karna",
+      "example": "ਮਾਫ਼ ਕਰਨਾ, ਇਹ ਮੇਰੀ ਗਲਤੀ ਸੀ। — Sorry, that was my mistake.",
+      "card_id": "pa005",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਚੱਲੋ",
+      "back": "Let's go / Come on / Okay then",
+      "transliteration": "Challo",
+      "example": "ਚੱਲੋ, ਜਲਦੀ ਕਰੋ! — Come on, hurry up!",
+      "card_id": "pa006",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਇੱਕ",
+      "back": "One (1)",
+      "transliteration": "Ikk",
+      "example": "ਮੈਨੂੰ ਇੱਕ ਚਾਹ ਚਾਹੀਦੀ ਹੈ। — I want one tea.",
+      "card_id": "pa007",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਦੋ",
+      "back": "Two (2)",
+      "transliteration": "Do",
+      "example": "ਦੋ ਰੋਟੀਆਂ ਦਿਓ। — Give me two rotis.",
+      "card_id": "pa008",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਪੰਜ",
+      "back": "Five (5)",
+      "transliteration": "Panj",
+      "example": "ਪੰਜ ਮਿੰਟ ਰੁਕੋ। — Wait five minutes.",
+      "card_id": "pa009",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਦਸ",
+      "back": "Ten (10)",
+      "transliteration": "Das",
+      "example": "ਦਸ ਵੱਜੇ ਮਿਲਦੇ ਹਾਂ। — Let's meet at ten o'clock.",
+      "card_id": "pa010",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਲਾਲ",
+      "back": "Red",
+      "transliteration": "Laal",
+      "example": "ਇਹ ਲਾਲ ਦੁਪੱਟਾ ਬਹੁਤ ਸੁੰਦਰ ਹੈ। — This red dupatta is very beautiful.",
+      "card_id": "pa011",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਨੀਲਾ",
+      "back": "Blue",
+      "transliteration": "Neela",
+      "example": "ਅਸਮਾਨ ਨੀਲਾ ਹੈ। — The sky is blue.",
+      "card_id": "pa012",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਹਰਾ",
+      "back": "Green",
+      "transliteration": "Hara",
+      "example": "ਖੇਤ ਹਰੇ ਹਨ। — The fields are green.",
+      "card_id": "pa013",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਪੀਲਾ",
+      "back": "Yellow",
+      "transliteration": "Peela",
+      "example": "ਸਰ੍ਹੋਂ ਦੇ ਫੁੱਲ ਪੀਲੇ ਹਨ। — Mustard flowers are yellow.",
+      "card_id": "pa014",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਚਿੱਟਾ / ਕਾਲਾ",
+      "back": "White / Black",
+      "transliteration": "Chitta / Kaala",
+      "example": "ਉਸਦੀ ਕਮੀਜ਼ ਚਿੱਟੀ ਹੈ। — His shirt is white.",
+      "card_id": "pa015",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਪਾਣੀ",
+      "back": "Water",
+      "transliteration": "Paani",
+      "example": "ਮੈਨੂੰ ਪਾਣੀ ਚਾਹੀਦਾ ਹੈ। — I need water.",
+      "card_id": "pa016",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਰੋਟੀ",
+      "back": "Flatbread / Food (also used to mean a meal)",
+      "transliteration": "Roti",
+      "example": "ਮਾਂ ਰੋਟੀ ਬਣਾ ਰਹੀ ਹੈ। — Mum is making roti.",
+      "card_id": "pa017",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਲੱਸੀ",
+      "back": "Lassi (traditional yoghurt drink)",
+      "transliteration": "Lassi",
+      "example": "ਪੰਜਾਬੀ ਲੱਸੀ ਬਹੁਤ ਮਸ਼ਹੂਰ ਹੈ। — Punjabi lassi is very famous.",
+      "card_id": "pa018",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਸਰ੍ਹੋਂ ਦਾ ਸਾਗ",
+      "back": "Mustard greens curry (iconic Punjabi dish)",
+      "transliteration": "Sarho(n) da saag",
+      "example": "ਸਰ੍ਹੋਂ ਦਾ ਸਾਗ ਅਤੇ ਮੱਕੀ ਦੀ ਰੋਟੀ। — Mustard greens and corn flatbread.",
+      "card_id": "pa019",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਦੁੱਧ",
+      "back": "Milk",
+      "transliteration": "Doodh",
+      "example": "ਤਾਜ਼ਾ ਦੁੱਧ ਪੀਓ। — Drink fresh milk.",
+      "card_id": "pa020",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਖੁਸ਼",
+      "back": "Happy",
+      "transliteration": "Khush",
+      "example": "ਮੈਂ ਬਹੁਤ ਖੁਸ਼ ਹਾਂ। — I am very happy.",
+      "card_id": "pa021",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਉਦਾਸ",
+      "back": "Sad",
+      "transliteration": "Udaas",
+      "example": "ਉਹ ਅੱਜ ਉਦਾਸ ਲੱਗਦਾ ਹੈ। — He looks sad today.",
+      "card_id": "pa022",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਥੱਕਿਆ ਹੋਇਆ",
+      "back": "Tired",
+      "transliteration": "Thakkiya hoya",
+      "example": "ਮੈਂ ਬਹੁਤ ਥੱਕਿਆ ਹੋਇਆ ਹਾਂ। — I am very tired.",
+      "card_id": "pa023",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਪਿਆਰ",
+      "back": "Love",
+      "transliteration": "Pyaar",
+      "example": "ਮਾਂ ਦਾ ਪਿਆਰ ਸਭ ਤੋਂ ਵੱਡਾ ਹੈ। — A mother's love is the greatest.",
+      "card_id": "pa024",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਗੁੱਸਾ",
+      "back": "Anger / Angry",
+      "transliteration": "Gussa",
+      "example": "ਉਸਨੂੰ ਗੁੱਸਾ ਆ ਗਿਆ। — He got angry.",
+      "card_id": "pa025",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਅੱਜ",
+      "back": "Today",
+      "transliteration": "Ajj",
+      "example": "ਅੱਜ ਮੌਸਮ ਚੰਗਾ ਹੈ। — The weather is good today.",
+      "card_id": "pa026",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਕੱਲ੍ਹ",
+      "back": "Yesterday / Tomorrow (context-based)",
+      "transliteration": "Kal(h)",
+      "example": "ਕੱਲ੍ਹ ਮੈਂ ਘਰ ਜਾਵਾਂਗਾ। — I will go home tomorrow.",
+      "card_id": "pa027",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਸਵੇਰੇ",
+      "back": "Morning / In the morning",
+      "transliteration": "Savere",
+      "example": "ਸਵੇਰੇ ਉੱਠਣਾ ਚੰਗਾ ਹੁੰਦਾ ਹੈ। — Waking up in the morning is good.",
+      "card_id": "pa028",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਰਾਤ",
+      "back": "Night",
+      "transliteration": "Raat",
+      "example": "ਰਾਤ ਨੂੰ ਚੰਦ ਚਮਕਦਾ ਹੈ। — The moon shines at night.",
+      "card_id": "pa029",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਹੁਣੇ",
+      "back": "Right now / Just now",
+      "transliteration": "Hune",
+      "example": "ਮੈਂ ਹੁਣੇ ਆਉਂਦਾ ਹਾਂ। — I am coming right now.",
+      "card_id": "pa030",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਮਾਂ",
+      "back": "Mother",
+      "transliteration": "Maa",
+      "example": "ਮੇਰੀ ਮਾਂ ਬਹੁਤ ਮਿਹਨਤੀ ਹੈ। — My mother is very hardworking.",
+      "card_id": "pa031",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਪਿਤਾ ਜੀ",
+      "back": "Father (respectful)",
+      "transliteration": "Pita Ji",
+      "example": "ਪਿਤਾ ਜੀ ਦਫ਼ਤਰ ਗਏ ਹਨ। — Father has gone to the office.",
+      "card_id": "pa032",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਭੈਣ / ਭਰਾ",
+      "back": "Sister / Brother",
+      "transliteration": "Bhain / Bhara",
+      "example": "ਮੇਰੀ ਭੈਣ ਬਹੁਤ ਹੁਸ਼ਿਆਰ ਹੈ। — My sister is very smart.",
+      "card_id": "pa033",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਦੋਸਤ",
+      "back": "Friend",
+      "transliteration": "Dost",
+      "example": "ਉਹ ਮੇਰਾ ਪੱਕਾ ਦੋਸਤ ਹੈ। — He is my true friend.",
+      "card_id": "pa034",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਬੱਚਾ",
+      "back": "Child / Baby",
+      "transliteration": "Bachcha",
+      "example": "ਬੱਚਾ ਬਹੁਤ ਪਿਆਰਾ ਹੈ। — The child is very cute.",
+      "card_id": "pa035",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਘਰ",
+      "back": "Home / House",
+      "transliteration": "Ghar",
+      "example": "ਮੈਂ ਘਰ ਜਾ ਰਿਹਾ ਹਾਂ। — I am going home.",
+      "card_id": "pa036",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਬਾਜ਼ਾਰ",
+      "back": "Market / Bazaar",
+      "transliteration": "Baazaar",
+      "example": "ਮਾਂ ਬਾਜ਼ਾਰ ਗਈ ਹੈ। — Mum has gone to the market.",
+      "card_id": "pa037",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਮਦਦ",
+      "back": "Help",
+      "transliteration": "Madad",
+      "example": "ਕੀ ਤੁਸੀਂ ਮੇਰੀ ਮਦਦ ਕਰ ਸਕਦੇ ਹੋ? — Can you help me?",
+      "card_id": "pa038",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਸੁੰਦਰ",
+      "back": "Beautiful",
+      "transliteration": "Sundar",
+      "example": "ਪੰਜਾਬ ਬਹੁਤ ਸੁੰਦਰ ਹੈ। — Punjab is very beautiful.",
+      "card_id": "pa039",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "ਵਾਹਿਗੁਰੂ",
+      "back": "God / Wonderful Lord (Sikh divine name, used as an expression of awe)",
+      "transliteration": "Waheguru",
+      "example": "ਵਾਹਿਗੁਰੂ ਦੀ ਕਿਰਪਾ। — By the grace of God.",
+      "card_id": "pa040",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    }
+  ]
+}

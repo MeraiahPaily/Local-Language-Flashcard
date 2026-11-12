@@ -1,0 +1,368 @@
+{
+  "name": "Hindi Basics",
+  "language": "Hindi",
+  "description": "Essential Hindi vocabulary — greetings, numbers, colours, food, emotions, time, family, and everyday phrases",
+  "created_at": "2026-01-01T00:00:00",
+  "cards": [
+    {
+      "front": "नमस्ते",
+      "back": "Hello / Greetings (respectful)",
+      "transliteration": "Namaste",
+      "example": "नमस्ते! आप कैसे हैं? — Hello! How are you?",
+      "card_id": "hi001",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "धन्यवाद",
+      "back": "Thank you",
+      "transliteration": "Dhanyavaad",
+      "example": "आपकी मदद के लिए धन्यवाद। — Thank you for your help.",
+      "card_id": "hi002",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "माफ़ कीजिए",
+      "back": "Sorry / Excuse me (formal)",
+      "transliteration": "Maaf keejiye",
+      "example": "माफ़ कीजिए, यह मेरी गलती थी। — Sorry, that was my mistake.",
+      "card_id": "hi003",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "हाँ / नहीं",
+      "back": "Yes / No",
+      "transliteration": "Haan / Nahin",
+      "example": "क्या आप हिन्दी बोलते हैं? हाँ! — Do you speak Hindi? Yes!",
+      "card_id": "hi004",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "फिर मिलेंगे",
+      "back": "See you again / Goodbye",
+      "transliteration": "Phir milenge",
+      "example": "अच्छा, फिर मिलेंगे! — Alright, see you again!",
+      "card_id": "hi005",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "एक",
+      "back": "One (1)",
+      "transliteration": "Ek",
+      "example": "मुझे एक चाय चाहिए। — I want one tea.",
+      "card_id": "hi006",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "दो",
+      "back": "Two (2)",
+      "transliteration": "Do",
+      "example": "दो लोग हैं। — There are two people.",
+      "card_id": "hi007",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "पाँच",
+      "back": "Five (5)",
+      "transliteration": "Paanch",
+      "example": "पाँच मिनट रुकिए। — Wait five minutes.",
+      "card_id": "hi008",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "दस",
+      "back": "Ten (10)",
+      "transliteration": "Das",
+      "example": "दस बजे मिलते हैं। — Let's meet at ten o'clock.",
+      "card_id": "hi009",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "सौ",
+      "back": "Hundred (100)",
+      "transliteration": "Sau",
+      "example": "यह सौ रुपये का है। — This costs one hundred rupees.",
+      "card_id": "hi010",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "लाल",
+      "back": "Red",
+      "transliteration": "Laal",
+      "example": "यह लाल गुलाब बहुत सुंदर है। — This red rose is very beautiful.",
+      "card_id": "hi011",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "नीला",
+      "back": "Blue",
+      "transliteration": "Neela",
+      "example": "आसमान नीला है। — The sky is blue.",
+      "card_id": "hi012",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "हरा",
+      "back": "Green",
+      "transliteration": "Hara",
+      "example": "पेड़ हरे हैं। — The trees are green.",
+      "card_id": "hi013",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "पीला",
+      "back": "Yellow",
+      "transliteration": "Peela",
+      "example": "यह पीला फूल है। — This is a yellow flower.",
+      "card_id": "hi014",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "सफेद / काला",
+      "back": "White / Black",
+      "transliteration": "Safed / Kaala",
+      "example": "बिल्ली सफेद है, कुत्ता काला है। — The cat is white, the dog is black.",
+      "card_id": "hi015",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "पानी",
+      "back": "Water",
+      "transliteration": "Paani",
+      "example": "मुझे पानी चाहिए। — I need water.",
+      "card_id": "hi016",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "खाना",
+      "back": "Food / To eat",
+      "transliteration": "Khaana",
+      "example": "खाना बहुत अच्छा है। — The food is very good.",
+      "card_id": "hi017",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "चाय",
+      "back": "Tea",
+      "transliteration": "Chai",
+      "example": "क्या आप चाय पीना चाहते हैं? — Would you like to drink tea?",
+      "card_id": "hi018",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "रोटी",
+      "back": "Bread / Flatbread",
+      "transliteration": "Roti",
+      "example": "माँ रोटी बना रही हैं। — Mum is making roti.",
+      "card_id": "hi019",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "दूध",
+      "back": "Milk",
+      "transliteration": "Doodh",
+      "example": "बच्चे दूध पीते हैं। — Children drink milk.",
+      "card_id": "hi020",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "खुश",
+      "back": "Happy",
+      "transliteration": "Khush",
+      "example": "मैं बहुत खुश हूँ। — I am very happy.",
+      "card_id": "hi021",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "उदास",
+      "back": "Sad",
+      "transliteration": "Udaas",
+      "example": "वह आज उदास लग रहा है। — He seems sad today.",
+      "card_id": "hi022",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "थका हुआ",
+      "back": "Tired",
+      "transliteration": "Thaka hua",
+      "example": "मैं बहुत थका हुआ हूँ। — I am very tired.",
+      "card_id": "hi023",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "डर",
+      "back": "Fear / Scared",
+      "transliteration": "Dar",
+      "example": "मुझे अँधेरे से डर लगता है। — I am scared of the dark.",
+      "card_id": "hi024",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "प्यार",
+      "back": "Love",
+      "transliteration": "Pyaar",
+      "example": "माँ का प्यार अनमोल है। — A mother's love is priceless.",
+      "card_id": "hi025",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "आज",
+      "back": "Today",
+      "transliteration": "Aaj",
+      "example": "आज मौसम अच्छा है। — The weather is nice today.",
+      "card_id": "hi026",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "कल",
+      "back": "Yesterday / Tomorrow (context-based)",
+      "transliteration": "Kal",
+      "example": "कल मैं घर जाऊँगा। — I will go home tomorrow.",
+      "card_id": "hi027",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "सुबह",
+      "back": "Morning",
+      "transliteration": "Subah",
+      "example": "सुबह उठना अच्छा होता है। — Waking up in the morning is good.",
+      "card_id": "hi028",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "रात",
+      "back": "Night",
+      "transliteration": "Raat",
+      "example": "रात को नींद अच्छी आती है। — One sleeps well at night.",
+      "card_id": "hi029",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "अभी",
+      "back": "Right now / Just now",
+      "transliteration": "Abhi",
+      "example": "मैं अभी आता हूँ। — I am coming right now.",
+      "card_id": "hi030",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "माँ",
+      "back": "Mother",
+      "transliteration": "Maa",
+      "example": "मेरी माँ बहुत अच्छी हैं। — My mother is very good.",
+      "card_id": "hi031",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "पिताजी",
+      "back": "Father (respectful)",
+      "transliteration": "Pitaaji",
+      "example": "पिताजी दफ्तर गए हैं। — Father has gone to the office.",
+      "card_id": "hi032",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "भाई / बहन",
+      "back": "Brother / Sister",
+      "transliteration": "Bhai / Behen",
+      "example": "मेरे एक भाई और एक बहन है। — I have one brother and one sister.",
+      "card_id": "hi033",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "दोस्त",
+      "back": "Friend",
+      "transliteration": "Dost",
+      "example": "वह मेरा सबसे अच्छा दोस्त है। — He is my best friend.",
+      "card_id": "hi034",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "बच्चा",
+      "back": "Child / Baby",
+      "transliteration": "Bachcha",
+      "example": "बच्चा बहुत प्यारा है। — The child is very cute.",
+      "card_id": "hi035",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "घर",
+      "back": "Home / House",
+      "transliteration": "Ghar",
+      "example": "मैं घर जा रहा हूँ। — I am going home.",
+      "card_id": "hi036",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "बाज़ार",
+      "back": "Market / Bazaar",
+      "transliteration": "Baazaar",
+      "example": "माँ बाज़ार गई हैं। — Mum has gone to the market.",
+      "card_id": "hi037",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "स्कूल",
+      "back": "School",
+      "transliteration": "Skool",
+      "example": "बच्चे स्कूल जाते हैं। — Children go to school.",
+      "card_id": "hi038",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "मदद",
+      "back": "Help",
+      "transliteration": "Madad",
+      "example": "क्या आप मेरी मदद कर सकते हैं? — Can you help me?",
+      "card_id": "hi039",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "सुंदर",
+      "back": "Beautiful / Lovely",
+      "transliteration": "Sundar",
+      "example": "यह जगह बहुत सुंदर है। — This place is very beautiful.",
+      "card_id": "hi040",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    }
+  ]
+}

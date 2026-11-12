@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% block title %}ShabdKosh — Flashcard Engine{% endblock %}
+
+{% block head %}
+<style>
+  .hero {
+    padding: 3rem 0 1.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2.5rem;
+  }
+  .hero h1 { font-size: 2.4rem; margin-bottom: .5rem; }
+  .hero p { color: var(--muted); max-width: 52ch; margin-top: .5rem; }
+
+  .deck-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .deck-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: border-color .15s, transform .15s;
+    position: relative;
+  }
+  .deck-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .deck-card-lang {
+    font-family: var(--font-script);
+    font-size: 2rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: .75rem;
+  }
+  .deck-card h2 { font-size: 1rem; margin-bottom: .25rem; }
+  .deck-card .desc { color: var(--muted); font-size: .825rem; margin: .35rem 0 1rem; min-height: 2.5em; }
+  .deck-stats { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .75rem; }
+  .deck-due-badge {
+    position: absolute; top: 1rem; right: 1rem;
+    background: var(--accent); color: #ffffff;
+    border-radius: 99px; padding: .15rem .6rem;
+    font-size: .72rem; font-weight: 600;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--muted);
+  }
+  .empty-state .big { font-size: 3.5rem; margin-bottom: 1rem; }
+  .empty-state p { max-width: 36ch; margin: 0 auto .5rem; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container wide">
+  <div class="hero">
+    <h1>शब्दकोश</h1>
+    <p>Your personal language flashcard engine. Study smarter with spaced repetition — cards you know appear less often, tricky ones come back sooner.</p>
+  </div>
+
+  <div class="section-header">
+    <h2>Your Decks</h2>
+    <button class="btn btn-primary" onclick="openCreateModal()">+ New Deck</button>
+  </div>
+
+  {% if decks %}
+  <div class="deck-grid">
+    {% for d in decks %}
+    <a href="/deck/{{ d.name }}" class="deck-card">
+      {% if d.due > 0 %}
+      <div class="deck-due-badge">{{ d.due }} due</div>
+      {% endif %}
+      <div class="deck-card-lang">{{ d.language[0] }}</div>
+      <h2>{{ d.name }}</h2>
+      <p class="desc">{{ d.description or 'No description.' }}</p>
+      <div class="deck-stats">
+        <span class="pill pill-muted">{{ d.total }} cards</span>
+        {% if d.new > 0 %}<span class="pill pill-orange">{{ d.new }} new</span>{% endif %}
+        {% if d.mature > 0 %}<span class="pill pill-green">{{ d.mature }} mature</span>{% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty-state">
+    <div class="big">🃏</div>
+    <p>No decks yet. Create your first deck to start studying.</p>
+    <button class="btn btn-primary mt-4" onclick="openCreateModal()">Create a Deck</button>
+  </div>
+  {% endif %}
+</div>
+
+<!-- Create Deck Modal -->
+<div class="modal-backdrop" id="createModal">
+  <div class="modal">
+    <h2>New Deck</h2>
+    <div class="form-group">
+      <label>Deck Name</label>
+      <input type="text" id="newName" placeholder="e.g. Hindi Basics">
+    </div>
+    <div class="form-group">
+      <label>Language</label>
+      <input type="text" id="newLang" placeholder="e.g. Hindi, Punjabi, Tamil">
+    </div>
+    <div class="form-group">
+      <label>Description (optional)</label>
+      <input type="text" id="newDesc" placeholder="What will you study?">
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeCreateModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="createDeck()">Create</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  function openCreateModal() {
+    document.getElementById('createModal').classList.add('open');
+    document.getElementById('newName').focus();
+  }
+  function closeCreateModal() {
+    document.getElementById('createModal').classList.remove('open');
+  }
+  document.getElementById('createModal').addEventListener('click', function(e) {
+    if (e.target === this) closeCreateModal();
+  });
+
+  async function createDeck() {
+    const name = document.getElementById('newName').value.trim();
+    const language = document.getElementById('newLang').value.trim();
+    const description = document.getElementById('newDesc').value.trim();
+    if (!name || !language) { showToast('Name and language are required.'); return; }
+    const res = await fetch('/api/decks', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({name, language, description})
+    });
+    if (res.ok) {
+      location.href = `/deck/${encodeURIComponent(name)}`;
+    } else {
+      const err = await res.json();
+      showToast('Error: ' + err.error);
+    }
+  }
+</script>
+{% endblock %}

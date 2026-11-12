@@ -1,0 +1,368 @@
+{
+  "name": "French Basics",
+  "language": "French",
+  "description": "Essential French vocabulary — greetings, numbers, colours, food, emotions, time, family, and everyday phrases with pronunciation",
+  "created_at": "2026-01-01T00:00:00",
+  "cards": [
+    {
+      "front": "Bonjour",
+      "back": "Hello / Good day (formal, used until ~6pm)",
+      "transliteration": "bon-ZHOOR",
+      "example": "Bonjour! Comment allez-vous? — Hello! How are you?",
+      "card_id": "fr001",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Salut",
+      "back": "Hi / Bye (informal, used with friends)",
+      "transliteration": "sah-LUU",
+      "example": "Salut! Ça va? — Hi! How's it going?",
+      "card_id": "fr002",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Merci (beaucoup)",
+      "back": "Thank you (very much)",
+      "transliteration": "mehr-SEE (boh-KOO)",
+      "example": "Merci beaucoup pour votre aide. — Thank you very much for your help.",
+      "card_id": "fr003",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Oui / Non",
+      "back": "Yes / No",
+      "transliteration": "wee / noh(n)",
+      "example": "Est-ce que tu parles français? Oui! — Do you speak French? Yes!",
+      "card_id": "fr004",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "S'il vous plaît",
+      "back": "Please (formal) — s'il te plaît = informal",
+      "transliteration": "seel voo PLEH",
+      "example": "Un café, s'il vous plaît. — One coffee, please.",
+      "card_id": "fr005",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Pardon / Excusez-moi",
+      "back": "Sorry / Excuse me",
+      "transliteration": "par-DOH(N) / ex-koo-ZAY mwah",
+      "example": "Pardon, je ne comprends pas. — Sorry, I don't understand.",
+      "card_id": "fr006",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Au revoir",
+      "back": "Goodbye",
+      "transliteration": "oh ruh-VWAH",
+      "example": "Au revoir! À bientôt! — Goodbye! See you soon!",
+      "card_id": "fr007",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Un / Deux / Trois",
+      "back": "One / Two / Three",
+      "transliteration": "u(n) / duh / twah",
+      "example": "Un, deux, trois — allons-y! — One, two, three — let's go!",
+      "card_id": "fr008",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Quatre / Cinq",
+      "back": "Four / Five",
+      "transliteration": "KAT-ruh / sa(n)k",
+      "example": "J'ai cinq livres. — I have five books.",
+      "card_id": "fr009",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Dix / Cent",
+      "back": "Ten / Hundred",
+      "transliteration": "dees / sah(n)",
+      "example": "Il y a cent étudiants. — There are one hundred students.",
+      "card_id": "fr010",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Rouge",
+      "back": "Red",
+      "transliteration": "roozh",
+      "example": "Elle porte une robe rouge. — She is wearing a red dress.",
+      "card_id": "fr011",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Bleu / Bleue",
+      "back": "Blue (m/f)",
+      "transliteration": "bluh",
+      "example": "Le ciel est bleu. — The sky is blue.",
+      "card_id": "fr012",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Vert / Verte",
+      "back": "Green (m/f)",
+      "transliteration": "vehr / vehrt",
+      "example": "Les arbres sont verts. — The trees are green.",
+      "card_id": "fr013",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Jaune",
+      "back": "Yellow",
+      "transliteration": "zhohn",
+      "example": "Le soleil est jaune. — The sun is yellow.",
+      "card_id": "fr014",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Blanc / Noir",
+      "back": "White / Black",
+      "transliteration": "blah(n) / nwah",
+      "example": "Un chat blanc et un chat noir. — A white cat and a black cat.",
+      "card_id": "fr015",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "L'eau",
+      "back": "Water (note: L' = the, water is feminine)",
+      "transliteration": "loh",
+      "example": "Je voudrais de l'eau, s'il vous plaît. — I would like some water, please.",
+      "card_id": "fr016",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Le pain",
+      "back": "Bread (note: silent 'n')",
+      "transliteration": "luh pa(n)",
+      "example": "Une baguette est un pain français. — A baguette is a French bread.",
+      "card_id": "fr017",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Le café",
+      "back": "Coffee (also: café/coffee shop)",
+      "transliteration": "luh kah-FAY",
+      "example": "Je prends un café le matin. — I have a coffee in the morning.",
+      "card_id": "fr018",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Le fromage",
+      "back": "Cheese",
+      "transliteration": "luh froh-MAZH",
+      "example": "La France a plus de 300 fromages. — France has more than 300 cheeses.",
+      "card_id": "fr019",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Le repas",
+      "back": "Meal",
+      "transliteration": "luh ruh-PAH",
+      "example": "Le repas est délicieux. — The meal is delicious.",
+      "card_id": "fr020",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Heureux / Heureuse",
+      "back": "Happy (m/f)",
+      "transliteration": "uh-RUH / uh-RUHZ",
+      "example": "Je suis très heureux aujourd'hui. — I am very happy today.",
+      "card_id": "fr021",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Triste",
+      "back": "Sad",
+      "transliteration": "treest",
+      "example": "Elle est triste aujourd'hui. — She is sad today.",
+      "card_id": "fr022",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Fatigué / Fatiguée",
+      "back": "Tired (m/f)",
+      "transliteration": "fah-tee-GAY",
+      "example": "Je suis très fatigué après le cours. — I am very tired after class.",
+      "card_id": "fr023",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "L'amour",
+      "back": "Love",
+      "transliteration": "lah-MOOR",
+      "example": "L'amour est dans l'air. — Love is in the air.",
+      "card_id": "fr024",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "En colère",
+      "back": "Angry",
+      "transliteration": "ah(n) koh-LEHR",
+      "example": "Il est en colère contre moi. — He is angry with me.",
+      "card_id": "fr025",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Aujourd'hui",
+      "back": "Today",
+      "transliteration": "oh-zhoor-DWEE",
+      "example": "Aujourd'hui c'est lundi. — Today is Monday.",
+      "card_id": "fr026",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Hier / Demain",
+      "back": "Yesterday / Tomorrow",
+      "transliteration": "yehr / duh-MA(N)",
+      "example": "Hier il pleuvait, demain il fera beau. — Yesterday it rained, tomorrow will be nice.",
+      "card_id": "fr027",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Le matin / Le soir",
+      "back": "Morning / Evening",
+      "transliteration": "luh mah-TA(N) / luh swah",
+      "example": "Bonjour le matin, bonsoir le soir. — Good morning in the morning, good evening in the evening.",
+      "card_id": "fr028",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Maintenant",
+      "back": "Now / Right now",
+      "transliteration": "ma(n)t-NAH(N)",
+      "example": "Je dois partir maintenant. — I have to leave now.",
+      "card_id": "fr029",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "La semaine",
+      "back": "Week (note: silent 'e' at end)",
+      "transliteration": "lah suh-MEN",
+      "example": "Il y a sept jours dans une semaine. — There are seven days in a week.",
+      "card_id": "fr030",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "La mère / Le père",
+      "back": "Mother / Father",
+      "transliteration": "lah mehr / luh pehr",
+      "example": "Ma mère et mon père sont à la maison. — My mother and father are at home.",
+      "card_id": "fr031",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "La sœur / Le frère",
+      "back": "Sister / Brother",
+      "transliteration": "lah suhr / luh frehr",
+      "example": "J'ai une sœur et deux frères. — I have one sister and two brothers.",
+      "card_id": "fr032",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "L'ami / L'amie",
+      "back": "Friend (m/f)",
+      "transliteration": "lah-MEE",
+      "example": "C'est mon meilleur ami. — He is my best friend.",
+      "card_id": "fr033",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "La maison",
+      "back": "House / Home",
+      "transliteration": "lah meh-ZO(N)",
+      "example": "Je rentre à la maison. — I am going back home.",
+      "card_id": "fr034",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "L'école",
+      "back": "School",
+      "transliteration": "leh-KOL",
+      "example": "Les enfants vont à l'école. — The children go to school.",
+      "card_id": "fr035",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Le livre",
+      "back": "Book",
+      "transliteration": "luh LEE-vruh",
+      "example": "J'aime lire des livres. — I love reading books.",
+      "card_id": "fr036",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Beau / Belle",
+      "back": "Beautiful / Handsome (m/f)",
+      "transliteration": "boh / bel",
+      "example": "Quelle belle journée! — What a beautiful day!",
+      "card_id": "fr037",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Je ne comprends pas",
+      "back": "I don't understand",
+      "transliteration": "zhuh nuh koh(m)-prah(n) pah",
+      "example": "Pouvez-vous répéter? Je ne comprends pas. — Can you repeat? I don't understand.",
+      "card_id": "fr038",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Enchanté / Enchantée",
+      "back": "Nice to meet you (m/f)",
+      "transliteration": "ah(n)-shah(n)-TAY",
+      "example": "Bonjour, je m'appelle Mer. Enchanté! — Hello, my name is Mer. Nice to meet you!",
+      "card_id": "fr039",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    },
+    {
+      "front": "Bien sûr",
+      "back": "Of course / Certainly",
+      "transliteration": "bya(n) soor",
+      "example": "Pouvez-vous m'aider? Bien sûr! — Can you help me? Of course!",
+      "card_id": "fr040",
+      "easiness": 2.5, "interval": 0, "repetitions": 0,
+      "due_date": "2026-01-01", "last_reviewed": null
+    }
+  ]
+}

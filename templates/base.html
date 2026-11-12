@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Flashcard Engine{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ── tokens ────────────────────────────────── */
+    :root {
+      --bg:        #f7f5f2;
+      --surface:   #ffffff;
+      --border:    #e2ddd8;
+      --accent:    #d97320;
+      --accent-dim:#fde8d0;
+      --gold:      #b8860b;
+      --text:      #1a1714;
+      --muted:     #7a7068;
+      --green:     #1a7a45;
+      --red:       #c0392b;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-script: 'Noto Serif', 'Noto Sans Devanagari', serif;
+      --r:         10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── nav ───────────────────────────────────── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 56px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .nav-logo {
+      font-family: var(--font-script);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: .02em;
+    }
+    .nav-logo span { color: var(--gold); }
+    nav a.nav-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .875rem;
+      transition: color .15s;
+    }
+    nav a.nav-link:hover { color: var(--text); }
+
+    /* ── layout ────────────────────────────────── */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem;
+    }
+    .wide { max-width: 1060px; }
+
+    /* ── typography ─────────────────────────────── */
+    h1 {
+      font-family: var(--font-script);
+      font-size: 1.9rem;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--text);
+    }
+    h2 {
+      font-family: var(--font-script);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .muted { color: var(--muted); font-size: .875rem; }
+
+    /* ── buttons ────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .55rem 1.2rem;
+      border-radius: var(--r);
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: .875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: opacity .15s, transform .1s;
+    }
+    .btn:active { transform: scale(.97); }
+    .btn-primary { background: var(--accent); color: #ffffff; }
+    .btn-primary:hover { opacity: .88; }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-ghost:hover { border-color: var(--muted); }
+    .btn-danger { background: var(--red); color: #fff; }
+    .btn-danger:hover { opacity: .85; }
+    .btn-sm { padding: .35rem .85rem; font-size: .8rem; }
+
+    /* ── pill badges ─────────────────────────────── */
+    .pill {
+      display: inline-block;
+      padding: .2rem .65rem;
+      border-radius: 99px;
+      font-size: .75rem;
+      font-weight: 500;
+    }
+    .pill-orange { background: #fde8d0; color: var(--accent); }
+    .pill-green  { background: #d4f0e2; color: var(--green);  }
+    .pill-muted  { background: var(--border); color: var(--muted); }
+
+    /* ── form inputs ─────────────────────────────── */
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: .6rem .9rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: .9rem;
+      outline: none;
+      transition: border-color .15s;
+    }
+    input[type="text"]:focus,
+    textarea:focus,
+    select:focus { border-color: var(--accent); }
+    label { display: block; margin-bottom: .35rem; color: var(--muted); font-size: .8rem; font-weight: 500; }
+    .form-group { margin-bottom: 1rem; }
+
+    /* ── toast ──────────────────────────────────── */
+    #toast {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: .75rem 1.25rem;
+      font-size: .875rem;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity .2s, transform .2s;
+      pointer-events: none;
+      z-index: 100;
+    }
+    #toast.show { opacity: 1; transform: translateY(0); }
+
+    /* ── modal ──────────────────────────────────── */
+    .modal-backdrop {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.35);
+      z-index: 50;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      width: min(480px, 94vw);
+    }
+    .modal h2 { margin-bottom: 1.25rem; }
+    .modal-footer {
+      display: flex;
+      gap: .75rem;
+      justify-content: flex-end;
+      margin-top: 1.5rem;
+    }
+
+    /* ── romanization toggle ─────────────────────── */
+    .roma-toggle {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: .25rem .65rem;
+      font-size: .8rem;
+      font-family: var(--font-body);
+      color: var(--muted);
+      cursor: pointer;
+      transition: border-color .15s, color .15s;
+    }
+    .roma-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .roma-toggle.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+    /* hide transliteration elements when roma is off */
+    body.roma-hidden .roma { display: none !important; }
+
+    /* ── misc ─────────────────────────────────────── */
+    hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+    .flex { display: flex; }
+    .gap-2 { gap: .5rem; }
+    .gap-3 { gap: .75rem; }
+    .items-center { align-items: center; }
+    .justify-between { justify-content: space-between; }
+    .mt-1 { margin-top: .25rem; }
+    .mt-2 { margin-top: .5rem; }
+    .mt-4 { margin-top: 1rem; }
+    .mt-6 { margin-top: 1.5rem; }
+    .text-center { text-align: center; }
+  </style>
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">🃏 <span>Shabd</span>Kosh</a>
+    <div style="display:flex;align-items:center;gap:1.25rem;">
+      <button id="romaBtn" onclick="toggleRoma()" class="roma-toggle" title="Show/hide romanization">
+        <span id="romaBtnLabel">अ → a</span>
+      </button>
+      <a href="/" class="nav-link">All Decks</a>
+    </div>
+  </nav>
+
+  {% block content %}{% endblock %}
+
+  <div id="toast"></div>
+
+  <script>
+    function showToast(msg, duration=2500) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), duration);
+    }
+
+    /* ── Romanization toggle ── */
+    (function() {
+      const stored = localStorage.getItem('roma');
+      // default ON (show romanization)
+      const on = stored === null ? true : stored === '1';
+      applyRoma(on);
+    })();
+
+    function applyRoma(on) {
+      const btn = document.getElementById('romaBtn');
+      if (on) {
+        document.body.classList.remove('roma-hidden');
+        if (btn) btn.classList.add('active');
+      } else {
+        document.body.classList.add('roma-hidden');
+        if (btn) btn.classList.remove('active');
+      }
+    }
+
+    function toggleRoma() {
+      const isHidden = document.body.classList.contains('roma-hidden');
+      const nowOn = isHidden; // flipping
+      localStorage.setItem('roma', nowOn ? '1' : '0');
+      applyRoma(nowOn);
+    }
+
+    /* ── Study streak helpers ── */
+    function recordStudyDay() {
+      const today = new Date().toISOString().slice(0,10);
+      let days = JSON.parse(localStorage.getItem('studyDays') || '[]');
+      if (!days.includes(today)) {
+        days.push(today);
+        // keep only last 84 days (12 weeks)
+        days = days.slice(-84);
+        localStorage.setItem('studyDays', JSON.stringify(days));
+      }
+    }
+
+    function getStudyDays() {
+      return JSON.parse(localStorage.getItem('studyDays') || '[]');
+    }
+  </script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
